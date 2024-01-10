@@ -1,0 +1,46 @@
+Software & Tools - 
+
+	1) Microsoft SQL Server 14 and onwards
+	2) Microsoft Visual Studio 2022
+	3) Microsoft Visual Studio Code
+	4) Node JS LTS version
+
+.NET Framework 4.8 [Windows Platform]
+
+.NET Core 8.0 [Cross Platform] [Versions - 1.0, 2.0, 3.0, 5.0, 6.0, 7.0 [STS], 8.0]
+
+Components of .NET Core -
+
+1) CLR - Common Language Runtime
+2) FCL/BCL - Framework Class Library/Base Class Library
+3) CTS - Common Type System
+4) CLS - Common Language Specifications [Set of Rules]
+
+
+C#/VB.NET/...
+
+Types - 
+	1) Value Type - Structures
+	2) Reference Type - Classes
+	
+Memory Management - 
+	1) Managed Memory - Managed by CLR
+	2) Unmanaged Memory - IDisposable=>Dispose() - You write the clean up code of Unmanaged objects [File IO, Network, Database, Etc.]
+		GC.SupressFinalize()
+
+GC.Collect() //Will call garbage collector explicitly
+
+.sln - Solution file - contains different types of projects
+.csproj - C# Project
+
+Use Solution Explorer of Visual Studio 2022 to see all the projects under one solution
+
+https://github.com/PravinkumarRD/bytejan2024
+
+
+
+
+
+
+
+
