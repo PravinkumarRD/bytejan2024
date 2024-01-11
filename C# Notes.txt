@@ -38,6 +38,160 @@ Use Solution Explorer of Visual Studio 2022 to see all the projects under one so
 https://github.com/PravinkumarRD/bytejan2024
 
 
+Day-2
+
+SOLID Principles
+
+S - Single Responsibility Principle [SRP]
+O - Open-Close Principle [OCP]
+L - Liskov Substitution Principle [LSP]
+I - Interface Segregation Principle [ISP]
+D - Dependency Inversion Principle [DI]
+
+
+4 Major Pillars of OOP 
+	1) Abstraction
+	2) Encapsulation
+		Class acts like a template where you bundle your abstraction
+		Hiding - [Access Modifiers - Private, Public, Protected, Internal, Protected Internal]
+		Class Types - 
+			Abstract Class
+			Concret Class
+			Final/Sealed Class
+			Static Class
+			Partial Class
+			Anonymous Class
+	3) Inheritance - [Reusability]
+			Generalization-To-Specialization
+			Relationships - IS-A [HAS-A]
+			Single, Multiple [Not Supported], Multilevel, Hierarchy, Hybrid
+
+			Example - 
+				//You cannot create an instance of an abstract class
+				abstract class Person {
+					//properties
+					//methods
+					//...
+				}
+				//Can be used by creating an instance or by exending
+				class Customer : Person{
+					//CustomerId;
+				}
+				//Can not be extended but can be used by creating new instance
+				sealed class PrimeCustomer : Customer{
+
+				}
+	4) Polymorphism
+		Overloading, Early Binding, Static, Compile time
+		Overriding, Late Binding, Dynamic, Runtime
+	
+class Address{
+...
+}
+
+Class Parent{
+	private x;
+	public y;
+	protected z;
+	Address address;
+	int a;
+}
+
+Class Child : Parent{
+	Public and Protected as inherited members
+}
+
+Parent p1=new Parent();
+p1.Public
+
+Interfaces - 
+
+interface IPhysics{
+	string phyCalci(int unit);
+}
+interface IBiology{
+	string bioCalci(int unit);
+}
+interface IChemistry{
+	string chemCalci(int unit);
+}
+
+interface DepartmentHod:IPhysics, IChemistry, IBiology
+
+SOA - Service Oriented Architecture [Web Service]
+
+class Science:IPhysics, IBiology, ICheimstry{
+	bioCalci(){
+
+	}
+	chemCalci(){
+
+	}
+	phyCalci(){
+
+	}
+
+}
+
+IBiology x1=new Science();
+x1.bioCalci();
+
+IChemistry x2=new Science();
+x2.chemCalci();
+
+IPhysics x3=new Science();
+x3.phyCalci();
+
+hod=new Science();
+hod.bioCalci();
+hod.phyCalci();
+hod.chemCalci();
+
+
+
+Overloading - 
+
+class Math {
+	int add(int i, int j)
+	int add(int i, int j, int k)
+	int add(double i, int j)
+}
+class AdvanceMath : Math{
+	int add(double i, double j)
+}
+
+
+Overriding - 
+
+class Parent{
+	virtual int addition(int i, int j){
+		return i + j + 1000;
+	}
+}
+
+class Child : Parent {
+	override int addition(int i, int j){
+		return i + j - 1000;
+	}
+}
+
+Parent p1=new Parent();
+p1.addition(1000,1000); Output - 3000
+
+Child c1=new Child();
+c1.addition(1000,1000); Output - 1000
+
+Parent pc1=new Child();
+pc1.addition(1000,1000); Output - 1000
+
+Function Parameter Types - 
+	1) Input
+	2) out or ref
+	3) params
+
+
+
+
 
 
 
