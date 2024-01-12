@@ -190,6 +190,131 @@ Function Parameter Types -
 	3) params
 
 
+Shadowing - Hiding
+
+Constructor - 
+	Are used for initialization
+	Constructor overloading
+Types - 
+	1) Default - 
+	2) Parameterized
+	3) Copy - 
+	4) Static - Static constuctor is executed before the first object creation process and exactly once throughout the application's lifecycle
+
+class Customer{
+	
+	int count=0;
+	public Customer(){
+		++count;
+	}
+}
+
+new Customer();
+new Customer();
+new Customer();
+new Customer();
+new Customer();
+
+Data Storages - 
+	
+1) In-Memory - 
+	i) Array - [1D, 2D, Jagged]
+		Similar type of data with fixed size
+	ii) Collections
+		a) Non-Generic Collections
+			Namespace - System.Collections;
+				ArrayList, Stack, Queue, Hashtable [Key-Value]
+		b) Generic Collections [Recommended]
+			Namespace - System.Collections.Generic;
+				List<T>, Stack<T>, Queue<T>, Dictionary<TKey, TValue>
+
+
+Purchase Order System - 
+	Categories, Products, Customers, Employees, Order, OrderDetails, Suppliers, Shippers, Invoices
+
+CRUD - Create [Insert], Read [Select], Update and Delete
+
+
+Template Approach [Generics]
+
+T stands for Type [Premitive/Complex]
+
+class CommonCrud<T>{
+	GetAll():List<T>
+	GetDetails():T
+	Insert(T item)
+	Update(T item)
+	Delete(T item)
+}
+
+class Customer {...}
+class Category {...}
+
+CommonCrud<Customer> custCrud=new CommonCrud<Customer>();
+CommonCrud<Category> custCrud=new CommonCrud<Category>();
+
+
+Different Delegate Types - 
+	1) Void - Perform a task without returning anything
+	2) Return - Func<T> - Return a specific type of value
+	3) Predicate - Predicate<T> - Conditional Delegate - Looks for boolean value - If true, get the result and if false no result
+
+
+LINQ - Language Integrated Query
+
+All LINQ queries output will always be either IEnumerable<T> or IQuerable<T>
+
+	1) OLINQ - Linq-To-Object
+	2) XLINQ - Linq-To-Xml
+	3) DLINQ - Linq-To-Data
+
+
+select */col1, col2, ... from Table
+where condition
+groupby expression
+orderby expression;
+
+Agreegate queries Inner joins, outer joins, subqueries,...
+
+1) 
+select * from table;
+
+from variable_name in collection_name
+select variable_name;
+
+2) 
+select * from table where city="London";
+
+from variable_name in collection_name
+where variable_name.property==value
+select variable_name;
+
+3) 
+select city, count(*) from customers group by city;
+
+from customer in GetAllCustomers()
+group customer by customer.city into group_varible
+select new Result {City=group_variable.Key, Count=group_variable.Count()};
+
+4) 
+select * from table orderby city desc;
+
+from customer in GetAllCustomers()
+orderby customer.city descending
+select customer;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
