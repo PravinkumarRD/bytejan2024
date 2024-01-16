@@ -234,8 +234,10 @@ Purchase Order System -
 
 CRUD - Create [Insert], Read [Select], Update and Delete
 
+All Model names are singular and all table names must be plural
 
 Template Approach [Generics]
+	Interfaces, Classes, Methods, Properties, ...
 
 T stands for Type [Premitive/Complex]
 
@@ -302,6 +304,102 @@ select * from table orderby city desc;
 from customer in GetAllCustomers()
 orderby customer.city descending
 select customer;
+
+
+File IO Operations - 
+
+import namespace - System.IO
+
+	1) File class - Offers number of static methods using which you can - 
+		1) Check existance of the file
+		2) Create new file
+		3) Delete
+		4) Move
+		5) Copy
+		6) Read and write operations
+		...
+	2) DriveInfo - This class will give information about all the drives
+	3) DirectoryInfo - This class will give information about the directory
+	4) FileInfo - This class will give information about the file
+	5) Directory - Gives you number of static methods
+	6) StreamWriter [TextWriter], StreamReader [TextReader]
+	7) FileStream
+
+Serialization and Deserialization - 
+	Persisting the state of an object is a process called Serialization. In general, writing the state of an object.
+	Reading the persisted state of an object
+
+	1) Binary Serialization [For Desktop application]
+		System.Runtime.Serialization.Formatters.Binary;
+			BinaryFormatter [class]
+				serialize(where,whichobject);
+				deserialize(from-where)
+				
+	2) Xml Serialization
+		System.Xml.Serialization;
+			XmlSerializer
+				serialize(where,whichobject);
+				deserialize(from-where)
+	3) SOAP Serialization [Web Services]
+		Simple Object Access Protocol
+
+
+Exception Handling - 
+
+	try {
+
+	}
+	catch(SpecificEx1 ex1) {
+
+	}
+	catch(SpecificEx2 ex2) {
+
+	}
+	catch(SpecificEx3 ex3) {
+
+	}
+	catch(Exception ex){
+
+	}
+
+https://codepen.io/pravinkumarcode/pen/zYLZwep
+
+1) Create a solution with two applications. 
+	1) DLL for 4 basic math operations - 
+		BasicMath
+			Addition, Subtraction, Division, Multiplication
+		AdvanceMath
+			Square and SquareRoot
+	2) EXE [Console] application which will use the above DLL and perform all 6 math operations
+
+2) Serialize and Deserialize Notice object in Xml format
+	Notice - NoticeId, Title, Message, CreatedDate, CreatedBy [Don't serialize this property]
+		Integer,   String, String, DateTime,    String
+
+
+While working threads - 
+	System.Threading;
+		Gives you classes to work with threads
+
+Thread Synchronization - 
+	1) Lock
+	2) Monitor
+	3) Mutex
+	4) Semaphore
+
+Task Parallel Library - [TPL]
+	Task - Void 
+	Task<T> - Return some output of Type T - Premitive/Complex/Custom
+
+
+
+
+
+
+
+
+
+
 
 
 
