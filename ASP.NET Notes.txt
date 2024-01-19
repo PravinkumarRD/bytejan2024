@@ -1,0 +1,286 @@
+Introduction to ASP.NET 6 Web Application - 
+	Different Types of Applications - [Console Apps]
+		1) Console Application
+		2) ASP.NET Core Web Application [Razor Pages]
+			i) When you want to implement rapid prototyping development
+			ii) When you want the logic and model to be in a single page
+			iii) Small to medium scale application
+			
+		3) ASP.NET Core Web Application [Model-View-Controller] - [5-Days]
+			i) Development of Large scale/Enterprise application
+			ii) Separation of Concern
+			iii) Easy Testing
+			iv) TDD - Test Driven Development Environment
+		4) ASP.NET Core Web API [RESTFul API] [4-Days]
+		5) Blazor Applications [Server and Client - Component Based Application]
+		6) gRPC Service Application
+		7) Full Stack Applications [Angular/React/Vue/... with ASP.NET Core]
+		8) Class Library [.DLL]
+	
+		9) Cloud [Azure/AWS/GCP/...]
+
+Server Side Web Application/ Client Side Web Application
+Client/Server [Thin Client and Thick Server/Thick Client and Thin Server]
+Hybrid - Client and Server technologies
+
+
+What is Web Application?
+	A collection of resources which you can access from any device accross the globle!
+		Browser [Non-Secured]
+			Html - Display
+			CSS - Styling
+			JavaScript [Client Side Scripting Language - DOM Manipulation/Event Handling/AJAX]
+			Images
+			Fonts
+			Third-party CSS Frameworks
+		Server [Secured]
+			C# Language 
+				Write service side logic - 
+					Database connectivity, 
+					Transactions, 
+					Security - (Authentication/Authorization)]
+			Configurations
+			JSON/XML/CSV files
+
+
+ASP - Active Server Pages .NET	
+
+Razor - Engine Syntax - Server Side Code
+
+	C# and Html code => Generate =>Html and CSS code [Response which will get sent to the client(Broswer)]
+		All razor files have extension - .cshtml [C# + Html - css, JavaScript, ...]
+		Example - 
+		<ul>
+			@foreach(var menu in menus){
+				<li>@menu.Title</li>
+			}
+		</ul>
+
+		Razor offers number of - 
+			Helper Attributes [asp-*]
+				<a asp-controller="Home" asp-action="Index">Home</a> [.cshtml]
+					Will get converted like below Html
+				<a href="/Home/Index">Home</a>
+
+			Helper Methods
+		which will generate the required/appropriate Html elements/attributes when used in CSHTML pages
+
+
+
+[Microsoft] IIS - Internet Information Service - Is a web server which hosts our Web Application. Takes/accept the request and send it to the appropriate Web Application. Once the response is generated, it send the response to the respective clients!
+
+ASP.NET Core MVC Architectural Pattern used for developing Web Applications/Websites
+
+M - Model - 
+	Contains data and business rules
+View - Display
+	Static or Dynamic [With the data from the model]
+Controller - 
+	Receives the request and send the response
+
+How does controller work?
+	1) Controller can send the response without Model and View
+	2) Controller can send the response as Data using Model - [JSON/XML format] [No View is involved]
+	3) Controller can send the static response using only views [No Model is involved]
+	4) Controller can send the response using view and model [Dynamic View]
+
+What is controller?
+	Controller is a class which contain methods known as Action Methods. Action methods are the ultimate desitnation of your request. All the requests are processed by action methods.
+	All methods in controller must be public which will act as destination of your request
+
+Model - Model contains data, business rules/logic
+
+View - Contains Html, CSS, JavaScript and Server side code like C#. The extension of all the views file is .cshtml
+
+A typical MVC application will contains minimum one controller with an action method and a view. 
+
+
+Suncity - MVC Application
+	Each Building  - Controller
+		Each Flat in that building's is an Action Method
+
+https://suncity.in/Suraj/A8/1001
+https://suncity.in/Suraj/A8/1002
+https://suncity.in/Suraj/A8/1003
+https://suncity.in/Suraj/A8/1004
+
+https://suncity.in/Ravi/A1/1001
+https://suncity.in/Ravi/A1/1002
+https://suncity.in/Ravi/A1/1003
+
+Routes Collection will be available as soon as application starts!
+
+https://bajaj.com - [Default] - /Home/Index
+https://bajaj.com/Home [Named/Specific]
+https://bajaj.com/Home/About [Named/Specific]
+https://bajaj.com/Home/Contact [Named/Specific]
+https://bajaj.com/Customers [Named/Specific]
+https://bajaj.com/Customers/Details/1001 [Parameterized Route][Dynamic Route]
+https://bajaj.com/Customers/Create [Named/Specific]
+https://bajaj.com/Customers/Update [Named/Specific]
+https://bajaj.com/Customers/Delete/1001 [Parameterized Route][Dynamic Route]
+
+https://bajaj.com/Employees/Delete?id=9001 [Query String Route][Dynamic Route]
+
+
+
+MVC Application will contain number of controllers and each controller will have minimal one or more than one action methods. 
+
+MVC Application contains the declaration of Routes - 
+
+	https://application/{controller}/{action-method}/{id?}
+	                 Default Controller - HomeController
+			 Default Action Method - Index	  
+
+
+HttpRequest
+
+HttpResponse
+
+ASP.NET Core MVC Application Lifecycle - 
+	Collection of Middleware - Functions [HttpRequest, HttpResponse]
+		Two types of middleware - 
+			1) In-built
+
+			2) Custom Middleware
+
+
+----------------------ASP.NET Core 6 PoC [Proof-Of-Concept]
+
+eCommerce Application [Shoes]
+	1) Featurewise Folder Structure - [With the help of Areas]
+	2) 3-Tier/Layer Architecture
+	3) Authentication & Authorization [OAuth]
+	4) Caching
+	5) Session Management
+	6) Cart Workflow
+	7) Payment Integration [Your Job]
+	8) Microsoft SQL Server [RDBMS]
+	9) Entity Framework - [ORM] [Code First Modeling]
+	10) IoC - Inversion-Of-Control Container and D.I. - Dependency Injection
+	11) Patterns - 
+		i) Generic Repository Pattern [CRUD - Operations]
+		ii) DTO [Data Transfer Object] and AutoMapper
+Roles - [Authorization] - [Customer/Administrator]
+	Customers - 
+		1) Customer can register him/her/it 
+		2) Customer can see the list of products
+		3) Customer can see the details of the product
+		4) Customer can add/remove the products from the Cart
+		5) Customer can checkout the cart items and proceed for payment
+		6) Customer will receive the Invoice for the purchased products after successful payment
+	Administrator - 
+		1) Manage the Products inventory [Add/Remove/Update]
+		2) Can register Employees of the eCommerce application [Generating credentials]
+
+
+An action method can return - 
+	1) Content() - ContentResult
+	2) Json() - JsonResult
+	3) View() - ViewResult
+	4) PartialView() - PartialResultView
+	5) File() - FileContentResult
+
+Communication between Controller and View - 
+	
+	How do you pass the data from Controller's action method to View?
+
+	1) Model - View(_customers);
+		You can pass Model data to the view using View() method which takes a parameter of type Object
+	2) ViewBag - It is a dynamic object
+	3) ViewData
+	4) TempData
+	5) ViewModel
+	
+
+
+Tables - 
+	Customers, Carts, CartDetails, Categories, Products, Employees, Invoices
+Entities/Models - 
+	Customer, Cart, CartDetail, Category, Product, Employee, Invoice
+
+Design simple Html page using Bootstrap CSS Framework with - 
+	Carousel [5-Images]
+	Carts divided into 3 columns layout [5-Rows]
+
+
+
+Data - Categories
+	1) Master/Static
+		Customers, Categories, Products, Employees
+	2) Transactional 
+		Carts, CartDetails, Invoices
+
+Microsoft .NET,  all the internet packages can be installed from official repository for Microsoft called Nuget
+
+Entity Framework Core - 
+	O/RM Framework - 
+		1) DB First Modeling/Apporach
+		2) Code First Modeling/Approach
+
+Code First Apporach - 
+	1) First write classes/models/entities
+		Apply validations - with the help of Data Annotations
+			System.ComponentModel.DataAnnotations;
+		1) Check validations on Client using jQuery Validation which uses data- attributes
+		2) Check validations on Server using ModelState object
+		3) Guide DbContext about the constraints, data types and length of individual columns
+		
+		
+	2) Add associations between classes [Relationships in Database]
+		i) One-To-One
+		ii) One-To-Many
+		iii) Many-To-Many
+	3) Configure Connection String [For Microsoft SQL Server]
+		i) Server Address
+		ii) Database Name
+		iii) Security
+			a) User Id and Password
+			b) Windows Authentication
+		iv) Certificate option
+
+		ConnectionString - 
+			i) SQL Server Windows Authentication
+			Data Source=localhost;Initial Catalog=ByteJanECommerceDb24;Trusted_Connection=true;TrustServerCertificate=True;
+
+			ii) SQL Server Authentication [User Id and Password]
+			Data Source=localhost;Initial Catalog=DatabaseName;Trusted_Connection=true;TrustServerCertificate=True;User Id=sa;Password=*****;
+
+			Alernative - 			Server=localhost;Database=DatabaseName;Trusted_Connection=true;TrustServerCertificate=True;
+
+	4) Install Entity Framework Core packages for SQL Server - [From Nuget Repository of Microsoft]
+		Microsoft.EntityFrameworkCore.SqlServer [To Connect with Microsoft SQL Server]
+		Microsoft.EntityFrameworkCore.Tools [Migration Commands]
+		
+	5) Create DbContext and provide connection string
+
+	6) Add DbSet<T> for all the entities/models/classes which will get added as tables
+
+	7) Apply/Use Migration commands to create new database/modify existing database
+
+		Write all the migration commands in - 
+			Package Manager Console window [Tools=>Nuget Package Manager]
+		dotnet ef migrations add InitialMigration [MAC]
+		dotnet ef update database [MAC]
+
+		i) Add initial migration [First time]
+			Add-Migration InitialMigration
+			Update-Database
+		ii) Any time model is getting changed, add specific change migration - 
+			AddMigration AddedPhoneInCustomer
+			Update-Database
+
+
+ILogger sms=new Sms();
+ILogger wapp=new WhatsApp();
+ILogger email=new Email();
+
+
+
+
+
+
+
+
+
+		
