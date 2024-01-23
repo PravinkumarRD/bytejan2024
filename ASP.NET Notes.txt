@@ -151,6 +151,15 @@ eCommerce Application [Shoes]
 	1) Featurewise Folder Structure - [With the help of Areas]
 	2) 3-Tier/Layer Architecture
 	3) Authentication & Authorization [OAuth]
+		Authentication - 
+			Check the identity of an User
+				1) User Id and Password
+				2) Windows Authentication
+				3) Biomatric
+				4) OAuth [Social Network - Google, Facebook, Linked, Github, Microsoft, ...]
+		Authorization - 
+			Grant/Revoke the permissions from certain resources [Roles/User]
+			Security Trimming
 	4) Caching
 	5) Session Management
 	6) Cart Workflow
@@ -274,6 +283,50 @@ Code First Apporach -
 ILogger sms=new Sms();
 ILogger wapp=new WhatsApp();
 ILogger email=new Email();
+
+
+Display Product Details - By passing the Product Id as a URL parameter value
+
+	https://localhost:7025/Products/Home/Details/selectedProductId
+
+HTTP Protocol - 
+	It is a stateless protocol
+
+State Management in ASP.NET Core 6
+
+Client Side [Non-Secured - Data]			Server Side [Secured]
+1) Query String						1) Session [Per Client]
+	https://ecommerce.com?id=100&name=xyz
+2) Cookies - 
+	i) Transient (ii) Persistent
+
+Working with Stored Procedures in EF Core
+
+1) SPs are compiled blocks stored permanantly in your database
+2) SPs offer modularity and reusability
+3) You can write logic in database and share accross number of applications and when changed, the changes will be centralized
+4) You can implement error handling and Transactions in your SPs
+	Transaction - [Commit or Rollback by Follow ACID properties]
+
+
+In EF Core, when you want to add SPs, you will create blank migration files
+
+
+https://localhost:7025/signin-google
+
+
+
+
+clientId:"674912756483-df0cmnevsmf9u8uuac58s8thtvrkn0n7.apps.googleusercontent.com"
+clientSecret:"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"
+
+
+
+
+
+
+
+
 
 
 
